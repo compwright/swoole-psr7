@@ -1,14 +1,13 @@
 {
-    "name": "ilexn/swoole-convent-psr7",
+    "name": "compwright/swoole-psr7",
     "authors": [
         {
-            "name": "iLexN",
-            "email": "ilex.job@gmail.com"
+            "name": "Jonathon Hill",
+            "email": "jonathon@compwright.com"
         }
     ],
     "require": {
         "php": "^7.2",
-        "ext-swoole": "*",
         "dflydev/fig-cookies": "^2.0"
     },
     "require-dev": {
@@ -23,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Ilex\\SwoolePsr7\\" : "src"
+            "Compwright\\SwoolePsr7\\" : "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Ilex\\SwoolePsr7\\Tests\\": "tests"
+            "Compwright\\SwoolePsr7\\Tests\\": "tests"
         }
     },
     "config": {
