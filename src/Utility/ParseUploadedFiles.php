@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ilex\SwoolePsr7\Utility;
+namespace Compwright\SwoolePsr7\Utility;
 
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\UploadedFileFactoryInterface;

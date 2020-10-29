@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Ilex\SwoolePsr7;
+namespace Compwright\SwoolePsr7;
 
-use Ilex\SwoolePsr7\Utility\ParseUploadedFiles;
-use Ilex\SwoolePsr7\Utility\ParseUriFromSwoole;
+use Compwright\SwoolePsr7\Utility\ParseUploadedFiles;
+use Compwright\SwoolePsr7\Utility\ParseUriFromSwoole;
 use Psr\Http\Message\ServerRequestFactoryInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
@@ -56,9 +56,8 @@ final class SwooleServerRequestConverter
         $this->streamFactory = $streamFactory;
     }
 
-    public function createFromSwoole(
-        Request $swooleRequest
-    ): ServerRequestInterface {
+    public function createFromSwoole(Request $swooleRequest): ServerRequestInterface
+    {
         $server = $swooleRequest->server;
         $method = $server['request_method'] ?? 'GET';
         $headers = $swooleRequest->header ?? [];
@@ -81,10 +80,8 @@ final class SwooleServerRequestConverter
             ->withUploadedFiles($this->parseUploadedFiles($swooleRequest->files ?? []));
     }
 
-    private function addHeaders(
-        array $headers,
-        ServerRequestInterface $serverRequest
-    ): ServerRequestInterface {
+    private function addHeaders(array $headers, ServerRequestInterface $serverRequest): ServerRequestInterface
+    {
         foreach ($headers as $name => $value) {
             if ($serverRequest->hasHeader($name)) {
                 continue;

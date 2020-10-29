@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ilex\SwoolePsr7\Tests;
+namespace Compwright\SwoolePsr7\Tests;
 
 use Swoole\Http\Request;
 

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Ilex\SwoolePsr7\Tests;
+namespace Compwright\SwoolePsr7\Tests;
 
-use Ilex\SwoolePsr7\SwooleServerRequestConverter;
+use Compwright\SwoolePsr7\SwooleServerRequestConverter;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestFactoryInterface;

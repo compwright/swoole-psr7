@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ilex\SwoolePsr7;
+namespace Compwright\SwoolePsr7;
 
 use Dflydev\FigCookies\SetCookies;
 use Psr\Http\Message\ResponseInterface;
@@ -65,8 +65,8 @@ final class SwooleResponseConverter
      */
     private function emitHeaders(ResponseInterface $response): void
     {
-        foreach ($response->withoutHeader(SetCookies::SET_COOKIE_HEADER)
-                     ->getHeaders() as $name => $values) {
+        $headers = $response->withoutHeader(SetCookies::SET_COOKIE_HEADER)->getHeaders();
+        foreach ($headers as $name => $values) {
             $name = ucwords($name, '-');
             $this->swooleResponse->header($name, implode(', ', $values));
         }
@@ -108,6 +108,5 @@ final class SwooleResponseConverter
         while (!$body->eof()) {
             $this->swooleResponse->write($body->read(static::CHUNK_SIZE));
         }
-        //$this->swooleResponse->end();
     }
 }

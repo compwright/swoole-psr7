@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Ilex\SwoolePsr7\Tests\Utility;
+namespace Compwright\SwoolePsr7\Tests\Utility;
 
-use Ilex\SwoolePsr7\Utility\ParseUploadedFiles;
+use Compwright\SwoolePsr7\Utility\ParseUploadedFiles;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\UploadedFileInterface;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ilex\SwoolePsr7\Utility;
+namespace Compwright\SwoolePsr7\Utility;
 
 use Psr\Http\Message\UriFactoryInterface;
 use Psr\Http\Message\UriInterface;
@@ -58,7 +58,7 @@ final class ParseUriFromSwoole
         $hostHeaderParts = explode(':', $server['http_host']);
         $this->uri = $this->uri->withHost($hostHeaderParts[0]);
         if (isset($hostHeaderParts[1])) {
-            $this->uri = $this->uri->withPort((int)$hostHeaderParts[1]);
+            $this->uri = $this->uri->withPort((int) $hostHeaderParts[1]);
         }
     }
 
@@ -67,7 +67,7 @@ final class ParseUriFromSwoole
         if (\strpos($header['host'], ':') !== false) {
             [$host, $port] = explode(':', $header['host'], 2);
             if ($port !== '80') {
-                $this->uri = $this->uri->withPort((int)$port);
+                $this->uri = $this->uri->withPort((int) $port);
             }
         } else {
             $host = $header['host'];
